@@ -6,6 +6,7 @@ Project Overview
 This project demonstrates the use of Convolutional Neural Networks (CNNs) to detect vampire butterflies from images. The project involves data preprocessing, model training, and object detection. It uses a dataset of positive (vampire butterflies) and negative (other butterfly species) samples.
 
 Project Structure
+-
 Dataset Preparation
 
 The dataset folder contains subfolders for positive and negative images.
