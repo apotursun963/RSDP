@@ -7,6 +7,7 @@ Model
 ```python 
 model = Sequential([
 
+    # Convolutional layers
     Conv2D(filters=32, kernel_size=(3,3), activation='relu', input_shape=(32,32,3)),
     MaxPooling2D(pool_size=(2,2)),
     Dropout(0.1),
@@ -19,7 +20,10 @@ model = Sequential([
     MaxPooling2D(pool_size=(2,2)),
     Dropout(0.1),
 
+    # Flatting the layer
     Flatten(),
+
+    # Fully connected layers 
     Dense(units=256, activation='relu'),
     Dropout(0.3),
 
