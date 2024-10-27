@@ -1,23 +1,7 @@
 Ricania Simulans Detection using CNN
 -------------------------------------
+This project use of Convolutional Neural Networks (CNNs) to detect vampire butterflies from images. It involves data preprocessing, model training, and object detection, utilizing a dataset with positive (vampire butterflies) and negative (other butterfly species) samples. The dataset contains subfolders for both positive and negative images, and the preprocessing scripts resize, normalize, and augment these images. The model creation script defines and trains a CNN model using the preprocessed images. Finally, the trained model classifies new images and video frames, offering real-time object detection and video processing functionality.
 
-Project Overview
+Results
+-------
 
-This project demonstrates the use of Convolutional Neural Networks (CNNs) to detect vampire butterflies from images. The project involves data preprocessing, model training, and object detection. It uses a dataset of positive (vampire butterflies) and negative (other butterfly species) samples.
-
-Dataset Preparation
-
-The dataset folder contains subfolders for positive and negative images.
-Positive images are vampire butterflies.
-Negative images are other butterfly species.
-Data preprocessing scripts resize, normalize, and augment the images.
-
-Model Training
-
-The model_creation script defines and trains a CNN model using the preprocessed images.
-The CNN architecture consists of multiple convolutional layers, max pooling, dropout, and dense layers.
-
-Testing and Inference
-
-The vampire_testing script uses the trained model to classify new images and video frames.
-It includes functionality for real-time object detection and video processing.
