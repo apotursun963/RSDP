@@ -18,9 +18,7 @@ open_cmr = cv2.VideoCapture(not_vampir_vid)
 
 while True:
     ret, frame = open_cmr.read()       
-
     process_frame = process_image(frame)
-
     tahmin = model.predict(process_frame)
 
     label = nmp.argmax(tahmin, axis=1)
@@ -29,13 +27,10 @@ while True:
 
     cv2.putText(frame, f'Label: {predicted_class} Confidence: {confidence:.2f}', 
                 (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
-
     if predicted_class > threshold:
         cv2.putText(frame, 'ilaci sik',
                     (10, 200), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2, cv2.LINE_AA)
-
     cv2.imshow('Frame', frame)
-
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 

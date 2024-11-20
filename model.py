@@ -28,7 +28,6 @@ def labeling(positive_dir, negative_dir):
     nmp.random.shuffle(indices)
     x = x[indices]
     y = y[indices]
-
     return (x,y)
 
 positive_folder = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Re-Positive"
