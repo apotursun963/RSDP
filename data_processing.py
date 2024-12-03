@@ -39,8 +39,10 @@ def positive_resize_normalize_and_augment(input_dir, output_dir, augment=True, a
                     else:
                         break
 
-positive_input_dir = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Positive"
-positive_output_dir = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Re-Positive"
+abs_path = os.getcwd()
+
+positive_input_dir = os.path.join(abs_path, "Dataset", "Positive")
+positive_output_dir = os.path.join(abs_path, "Dataset", "Re-Positive")
 positive_resize_normalize_and_augment(positive_input_dir, positive_output_dir)
 
 
@@ -64,11 +66,10 @@ def negative_resize_normalize_and_move(input_dir, output_dir):
                 img.save(output_file)
                 print(f"saved succefuly: {output_file}")
 
-negative_input_dir = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Negative"
-negative_output_dir = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Re-Negative"
+negative_input_dir = os.path.join(abs_path, "Dataset", "Negative")
+negative_output_dir = os.path.join(abs_path, "Dataset", "Re-Negative")
 negative_resize_normalize_and_move(negative_input_dir, negative_output_dir)
 
-print(f"len of Re-Positive: ", len(list(Path("C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Re-Positive").glob('*'))))
-print(f"len of Re-Negative: ", len(list(Path("C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Re-Negative").glob('*'))))
-
+print(f"len of Re-Positive: ", len(list(Path( os.path.join(abs_path, "Dataset", "Re-Positive")).glob('*'))))
+print(f"len of Re-Negative: ", len(list(Path( os.path.join(abs_path, "Dataset", "Re-Negative")).glob('*'))))
 
