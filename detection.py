@@ -1,9 +1,10 @@
 
 from keras._tf_keras.keras.models import load_model
 import numpy as nmp
-import cv2
+import cv2, os
 
-model = load_model("C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\CNN-MODEL.h5")
+abs_path = os.getcwd()
+model = load_model(os.path.join(abs_path, "CNN-MODEL.h5"))
 
 def process_image(image):
     img = cv2.resize(image, (32,32))
@@ -12,8 +13,8 @@ def process_image(image):
     return (img)
 
 threshold = 0.5
-vampirt_vid = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\vid\\RS.mp4"
-not_vampir_vid = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\vid\\!RS.mp4"
+vampirt_vid = os.path.join(abs_path, "vid", "RS.mp4")
+not_vampir_vid = os.path.join(abs_path, "vid", "!RS.mp4")
 open_cmr = cv2.VideoCapture(not_vampir_vid)
 
 while True:
