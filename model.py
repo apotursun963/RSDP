@@ -1,4 +1,3 @@
-
 from keras._tf_keras.keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, Dropout
 from sklearn.model_selection import train_test_split
 from keras._tf_keras.keras.models import Sequential
@@ -6,6 +5,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 from PIL import Image
 import numpy as nmp
+import os
 
 def labeling(positive_dir, negative_dir):
     images, labels = [], []
@@ -29,9 +29,6 @@ def labeling(positive_dir, negative_dir):
     x = x[indices]
     y = y[indices]
     return (x,y)
-
-positive_folder = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Re-Positive"
-negative_folder = "C:\\Users\\90507\\OneDrive\\Masaüstü\\Coding\\AI\\RSDP\\Dataset\\Re-Negative"
 
 x, y = labeling(positive_folder, negative_folder)
 
